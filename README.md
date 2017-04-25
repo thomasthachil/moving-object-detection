@@ -1,2 +1,7 @@
-# cs4475
-Final project for CS4475 at Georgia Tech - Detecting moving objects in video
+# Moving Object Detection in Video
+
+### Thomas Thachil,  Ashvin Rai
+
+
+Final Project for CS 4475 with Professor Irfan Essa at the
+Georgia Insitute of Technology
