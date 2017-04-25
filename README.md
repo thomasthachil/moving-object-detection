@@ -4,4 +4,4 @@
 
 
 Final Project for CS 4475 with Professor Irfan Essa at the
-Georgia Insitute of Technology
+Georgia Institute of Technology
