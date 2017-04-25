@@ -4,10 +4,10 @@ import numpy as np
 import cv2
 
 # capture frames from a video
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('videos/video.mp4')
 
 # Trained XML classifiers describes some features of some object we want to detect
-car_cascade = cv2.CascadeClassifier('cars.xml')
+car_cascade = cv2.CascadeClassifier('data/cars.xml')
 ret, frame = cap.read()
 
 # loop runs if capturing has been initialized.
@@ -24,7 +24,7 @@ while(cap.isOpened()):
 
     # To draw a rectangle in each cars
     for (x,y,w,h) in cars:
-        cv2.rectangle(frame,(x,y),(x+w,y+h),(0,0,255),2)
+        cv2.rectangle(frame,(x,y),(x+w,y+h),(255,255,255),1, 4)
 
         # Display frames in a window
         cv2.imshow('Vehicle Detection', frame)

@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 
+# used for webcam capture
+
 cap = cv2.VideoCapture(0)
 
 while(True):
