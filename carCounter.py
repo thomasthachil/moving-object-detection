@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 bgsMOG = cv2.BackgroundSubtractorMOG()
-cap    = cv2.VideoCapture("videos/streetSmall.mp4")
-counter = 0
+cap    = cv2.VideoCapture("videos/trafficSmall.mp4")
+car_cascade = cv2.CascadeClassifier('data/cars3.xml')
 
 if cap:
     while True:
@@ -25,6 +25,9 @@ if cap:
                 hierarchy = []
 
             for contour, hier in zip(contours, hierarchy):
+
+                # cars = car_cascade.detectMultiScale(contour, 1.05, 5)
+                # gray = np.array(cars, dtype='uint8')
                 (x, y, w, h) = cv2.boundingRect(contour)
 
                 if w > 5 and h > 5:

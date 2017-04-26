@@ -1,3 +1,4 @@
+
 # OpenCV Python program to detect cars in video frame
 # import libraries of python OpenCV
 import numpy as np
@@ -5,10 +6,10 @@ import cv2
 
 # capture frames from a video
 # bgsMOG = cv2.BackgroundSubtractorMOG()
-cap = cv2.VideoCapture('videos/intersectionSmall.mp4')
+cap = cv2.VideoCapture('videos/trafficSmall.mp4')
 
 # Trained XML classifiers describes some features of some object we want to detect
-car_cascade = cv2.CascadeClassifier('data/cars3.xml')
+car_cascade = cv2.CascadeClassifier('data/cars.xml')
 # hog = cv2.HOGDescriptor("data/vehicle_detector.yml")
 ret, frame = cap.read()
 
@@ -19,12 +20,10 @@ while(cap.isOpened()):
     # cv2.imshow('Vehicle Detection Original', frame)
     # convert to gray scale of each frames
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
     # fgmask = bgsMOG.apply(frame)
     # cv2.imshow('Vehicle Detection', fgmask)
     # Detects cars of different sizes in the input image
-    cars = car_cascade.detectMultiScale(frame, 1.9, 1)
-
+    cars = car_cascade.detectMultiScale(gray, 1.5, 2)
     # To draw a rectangle in each cars
     for (x,y,w,h) in cars:
         cv2.rectangle(frame,(x,y),(x+w,y+h),(255,255,255),1, 4)
