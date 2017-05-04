@@ -6,12 +6,12 @@ import numpy as np
 import Queue
 
 # capture frames from a video
-cap = cv2.VideoCapture("myVideos/custom1.mp4")
+cap = cv2.VideoCapture("demo/custom1.mp4")
 
 # setup output file
 codec = cv.CV_FOURCC('D','I','V','X')
 videoFile = cv2.VideoWriter();
-videoFile.open('output/1custom.avi', codec, 25, (480, 270),1)
+videoFile.open('output/demo.avi', codec, 25, (480, 270),1)
 
 
 # setup background subtractor object
